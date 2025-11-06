@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+//Made by @SYOP200 on Github
+//GNU LICENSING
+</style>
+</head>
+<body>
+    <div class="menu-screen" id="menu-screen">
+        <div class="menu-content">
+            <div class="menu-title">🏛️ BUREAUCRATIC HELL 🏛️</div>
+            <div class="menu-subtitle">A Country Management Nightmare</div>
+            <div class="menu-description">
+                <strong>Your Mission:</strong> Survive as long as possible while managing your failing nation.
+                <br><br>
+                <strong>What awaits you:</strong>
+                <ul>
+                    <li>🔥 Constant disasters and crises</li>
+                    <li>📋 Mandatory paperwork you CANNOT skip</li>
+                    <li>💀 All stats naturally decay over time</li>
+                    <li>⚡ Events speed up the longer you survive</li>
+                    <li>😈 Every decision has terrible consequences</li>
+                    <li>👥 Your population will suffer and flee</li>
+                </ul>
+                <br>
+                <strong style="color: #ff6b6b;">WARNING:</strong> This game is designed to make you lose. Enjoy the suffering!
+            </div>
+            <button class="start-button" onclick="startGame()">BEGIN YOUR DESCENT</button>
+        </div>
+    </div>
+    
+    <div class="container" id="game-container" style="display: none;">
+        <h1>🏛️ BUREAUCRATIC HELL 🏛️</h1>
+        <div class="subtitle">Survive as long as you can!</div>
+        
+        <div class="timer">Days Survived: <span id="days">0</span></div>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-label">👥 Population</div>
+                <div class="stat-value" id="population-val">10.0M</div>
+                <div class="stat-bar">
+                    <div class="stat-fill okay" id="population-bar" style="width: 100%"></div>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-label">💰 Economy</div>
+                <div class="stat-value" id="economy-val">50</div>
+                <div class="stat-bar">
+                    <div class="stat-fill okay" id="economy-bar" style="width: 50%"></div>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-label">😊 Stability</div>
+                <div class="stat-value" id="stability-val">50</div>
+                <div class="stat-bar">
+                    <div class="stat-fill okay" id="stability-bar" style="width: 50%"></div>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-label">🤝 Politics</div>
+                <div class="stat-value" id="politics-val">50</div>
+                <div class="stat-bar">
+                    <div class="stat-fill okay" id="politics-bar" style="width: 50%"></div>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-label">🚨 Corruption</div>
+                <div class="stat-value" id="corruption-val">30</div>
+                <div class="stat-bar">
+                    <div class="stat-fill good" id="corruption-bar" style="width: 30%"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="event-log" id="event-log">
+            <div class="event-item">🎮 Welcome to Bureaucratic Hell! Try to keep all stats balanced...</div>
+        </div>
+        
+        <div class="actions">
+            <button onclick="investEconomy()">💵 Invest in Economy<br><small>-10 Politics, +15 Economy</small></button>
+            <button onclick="crackdownCorruption()">🔨 Anti-Corruption Drive<br><small>-15 Corruption, -10 Politics</small></button>
+            <button onclick="populistPolicy()">📢 Populist Policy<br><small>+10 Stability, -10 Economy</small></button>
+            <button onclick="negotiatePolitics()">🤝 Diplomatic Summit<br><small>+15 Politics, -5 Economy</small></button>
+            <button onclick="doNothing()">😴 Do Nothing<br><small>Hope for the best...</small></button>
+        </div>
+    </div>
+    
+    <div class="game-over" id="game-over">
+        <div class="game-over-content">
+            <h2>REGIME COLLAPSED!</h2>
+            <p id="game-over-msg"></p>
+            <p>You survived <strong><span id="final-days">0</span> days</strong></p>
+            <button onclick="location.reload()">Try Again</button>
+        </div>
+    </div>
+    
+    <div class="paperwork-modal" id="paperwork-modal">
+        <div class="paperwork-content">
+            <h3 id="paperwork-title">📋 URGENT PAPERWORK REQUIRES YOUR SIGNATURE</h3>
+            <div class="timer-warning" id="paperwork-timer"></div>
+            <div class="paperwork-text" id="paperwork-text"></div>
+            <div class="signature-section">
+                <label><strong>Your Signature (Type your name exactly):</strong></label>
+                <input type="text" id="signature-input" class="signature-input" placeholder="Type 'I APPROVE' to sign">
+                <button class="sign-button" id="sign-button" disabled onclick="signPaperwork()">SIGN DOCUMENT</button>
+            </div>
+        </div>
+    </div>
+    
