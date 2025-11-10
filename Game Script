@@ -214,7 +214,9 @@
                     "Maybe try playing on easy mode? Oh wait, this IS easy mode.",
                     "You somehow made things worse with every decision.",
                     "The bar was on the ground, and you brought a shovel.",
-                    "Please don't put 'dictator' on your resume."
+                    "Please don't put 'dictator' on your resume.",
+                    "Please don't try to use hacks for help this time. They don't work!",
+                    "Imagine losing at a game made on a Chromebook..."
                 ];
                 
                 gameOverMessage += "\n\n" + finalInsults[Math.floor(Math.random() * finalInsults.length)];
