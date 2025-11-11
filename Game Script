@@ -131,7 +131,8 @@
             { name: "❄️ Blizzard Shuts Down Cities!", economy: -14, stability: -10, population: -90000 },
             { name: "🐀 Rat Infestation in Capital!", stability: -10, economy: -6, population: -45000 },
             { name: "🎬 Documentary Exposes Your Incompetence!", politics: -18, stability: -10 },
-            { name: "💼 Briefcase of Cash Found in Your Office!", corruption: 22, politics: -20, stability: -12 }
+            { name: "💼 Briefcase of Cash Found in Your Office!", corruption: 22, politics: -20, stability: -12 },
+            { name: "🔫 Terrorist Attacks Turn the Country into Shambles!", corruption: 37, politics: -27, stability: -27, economy: -30 }
         ];
         
         function updateDisplay() {
